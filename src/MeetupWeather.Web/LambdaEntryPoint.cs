@@ -5,9 +5,7 @@ namespace MeetupWeather.Web
 {
     /// <summary>
     /// This class extends from APIGatewayProxyFunction which contains the method FunctionHandlerAsync which is the 
-    /// actual Lambda function entry point. The Lambda handler field should be set to
-    /// 
-    /// AWSServerless2::AWSServerless2.LambdaEntryPoint::FunctionHandlerAsync
+    /// actual Lambda function entry point.
     /// </summary>
     public class LambdaEntryPoint : Amazon.Lambda.AspNetCoreServer.APIGatewayProxyFunction
     {
