@@ -9,7 +9,7 @@
     "DefaultFunction" : {
       "Type" : "AWS::Serverless::Function",
       "Properties": {
-        "Handler": "MeetupWeather.Web::MeetupWeather.Web.LambdaFunction::FunctionHandlerAsync",
+        "Handler": "MeetupWeather.Web::MeetupWeather.Web.LambdaEntryPoint::FunctionHandlerAsync",
         "Runtime": "dotnetcore1.0",
         "CodeUri": "__CodeUri__",
         "Description": "Demo of Serverless deployment with meetup.com event weather forcaster.",
