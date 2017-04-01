@@ -18,10 +18,7 @@
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MeetupWeather.Model\MeetupWeather.Model.csproj" />
-    <ProjectReference Include="..\MeetupWeather.Service\MeetupWeather.Service.csproj" />
+    <DotNetCliToolReference Include="Amazon.Lambda.Tools" Version="1.4.0" />
   </ItemGroup>
 
 </Project>
