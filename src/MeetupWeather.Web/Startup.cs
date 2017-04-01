@@ -12,8 +12,6 @@ namespace MeetupWeather.Web
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
         }
@@ -30,7 +28,13 @@ namespace MeetupWeather.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddLambdaLogger(Configuration.GetLambdaLoggerOptions());
+            loggerFactory.AddLambdaLogger(new LambdaLoggerOptions
+            {
+                IncludeCategory = true,
+                IncludeNewline = true,
+                IncludeLogLevel = true,
+                Filter = (category, logLevel) => logLevel >= LogLevel.Warning
+            });
 
             app.UseMvc();
         }
