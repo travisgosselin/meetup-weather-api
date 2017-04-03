@@ -3,6 +3,10 @@
   "Transform" : "AWS::Serverless-2016-10-31",
   "Description" : "Demo Mashup API that converts Meetup.com events to weather forcasts for the event day.",
   "Parameters": {
+	"MeetupApiToken": {
+		"Type": "String",
+		"Description": "The meetup.com API token to access events."
+	}
   },
   "Resources" : {
 
@@ -19,6 +23,7 @@
         "Policies": [ "AWSLambdaFullAccess" ],
         "Environment" : {
             "Variables": {
+				"MeetupApiToken": { "Ref": "MeetupApiToken" }
             }
         },
         "Events": {
